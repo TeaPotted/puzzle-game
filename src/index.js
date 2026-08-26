@@ -23,3 +23,30 @@ const images = [
   { pos: 7, elem: createImg(img1_2) },
   { pos: 8, elem: createImg(img2_2) },
 ];
+
+// function that shuffles images array then appends each image to puzzleContainer
+function displayShuffledImages() {
+  let imagesCopy = [].concat(images);
+  // remove the last img from imagesCopy
+  imagesCopy.pop();
+  // shuffle imagesCopy
+  shuffle(imagesCopy);
+
+  // append all imgs from imagesCopy to puzzleContainer
+  imagesCopy.forEach((img) => {
+    const imgElem = img.elem;
+    imgElem.dataset.position = img.pos;
+    puzzleContainer.append(imgElem);
+  });
+
+  let fifthChild = puzzleContainer.children[4];
+  // append an empty div to puzzleContainer and swap the empty div with the fifth child
+  puzzleContainer.append(document.createElement("div"));
+  let emptyChild = puzzleContainer.lastChild;
+  emptyChild.setAttribute("id", "empty");
+
+  fifthChild.replaceWith(emptyChild);
+  puzzleContainer.insertBefore(fifthChild, emptyChild.nextSibling);
+}
+
+displayShuffledImages();
