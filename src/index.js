@@ -49,4 +49,33 @@ function displayShuffledImages() {
   puzzleContainer.insertBefore(fifthChild, emptyChild.nextSibling);
 }
 
+// function for getting the row and col of the given tile in puzzleContainer
+function getTileIndex(tile) {
+  // create two vars: row and col for keeping track of the row and column
+  let row = 1;
+  let col = 1;
+
+  // create a var currTile, that is used to loop through puzzleContainer.children
+  let i = 0;
+  let currTile = puzzleContainer.children[i];
+
+  // loop through puzzleContainer.children until currTile matches the given tile
+  while (i < 9) {
+    // if currTile matches the given tile, return [row, col]
+    if (currTile == tile) {
+      return [row, col];
+    }
+
+    // if col is 3 increment row and reset col, else just increment col
+    if (col === 3) {
+      row++;
+      col = 1;
+    } else col++;
+
+    // move to the next child element in puzzleContainer
+    i++;
+    currTile = puzzleContainer.children[i];
+  }
+}
+
 displayShuffledImages();
