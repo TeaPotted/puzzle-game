@@ -47,6 +47,10 @@ function displayShuffledImages() {
 
   fifthChild.replaceWith(emptyChild);
   puzzleContainer.insertBefore(fifthChild, emptyChild.nextSibling);
+  // make each child in puzzleContainer call swapTile() when clicked
+  Array.from(puzzleContainer.children).map((el) => {
+    el.onclick = () => swapTile(el);
+  });
 }
 
 // function for getting the row and col of the given tile in puzzleContainer
