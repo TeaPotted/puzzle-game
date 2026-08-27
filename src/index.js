@@ -100,4 +100,19 @@ function isSwapValid(tile) {
   return possibleMoves.some((a) => targetTileIndex.every((v, i) => v === a[i]));
 }
 
+// function for swapping the given img elem with the empty div in .puzzleContainer
+function swapTile(tile) {
+  // if it is allowed to swap the given tile with the empty tile, swap the tiles
+  if (isSwapValid(tile)) {
+    const emptyTile = puzzleContainer.querySelector("#empty");
+    const temp = puzzleContainer.insertBefore(
+      document.createElement("a"),
+      tile,
+    );
+    puzzleContainer.insertBefore(tile, emptyTile);
+    puzzleContainer.insertBefore(emptyTile, temp);
+    puzzleContainer.removeChild(temp);
+  } else return; // else, do nothing
+}
+
 displayShuffledImages();
