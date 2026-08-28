@@ -8,6 +8,7 @@ import img2_0 from "../images/uhm-2-0.jpg";
 import img2_1 from "../images/uhm-2-1.jpg";
 import img2_2 from "../images/uhm-2-2.jpg";
 import { createImg, shuffle } from "./functions.js";
+import { swapTile } from "./tiles.js";
 
 const puzzleContainer = document.querySelector(".puzzle-container");
 // array to keep all the images
