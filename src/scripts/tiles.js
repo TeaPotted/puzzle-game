@@ -1,4 +1,4 @@
-const puzzleContainer = document.querySelector(".puzzle-container")
+const puzzleContainer = document.querySelector(".puzzle-container");
 // function for getting the row and col of the given tile in puzzleContainer
 function getTileIndex(tile) {
   // create two vars: row and col for keeping track of the row and column
@@ -65,4 +65,17 @@ function swapTile(tile) {
   } else return; // else, do nothing
 }
 
-export {swapTile}
+// function for getting the position of the given tile in puzzleContainer
+function getTilePosition(tile) {
+  let i = 0;
+  let currTile;
+
+  while (i < 9) {
+    currTile = puzzleContainer.children[i];
+    if (currTile === tile) {
+      return ++i;
+    } else i++;
+  }
+}
+
+export { swapTile };
