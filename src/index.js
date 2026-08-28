@@ -1,4 +1,4 @@
 import "./styles.css";
-import { displayShuffledImages } from "./scripts/display.js";
+import { displayShuffledImages, displayImgs } from "./scripts/display.js";
 
-displayShuffledImages();
+displayImgs();

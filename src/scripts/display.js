@@ -24,6 +24,31 @@ const images = [
   { pos: 9, elem: createImg(img2_2) },
 ];
 
+// this does the same as displayShuffledImages but is only used for testing
+function displayImgs() {
+  let imagesCopy = [].concat(images);
+  // remove the last img from imagesCopy
+  imagesCopy.pop();
+  // append all imgs from imagesCopy to puzzleContainer
+  imagesCopy.forEach((img) => {
+    const imgElem = img.elem;
+    imgElem.dataset.position = img.pos;
+    puzzleContainer.append(imgElem);
+  });
+  let sixthChild = puzzleContainer.children[6];
+  // append an empty div to puzzleContainer and swap the empty div with the fifth child
+  puzzleContainer.append(document.createElement("div"));
+  let emptyChild = puzzleContainer.lastChild;
+  emptyChild.setAttribute("id", "empty");
+
+  sixthChild.replaceWith(emptyChild);
+  puzzleContainer.insertBefore(sixthChild, emptyChild.nextSibling);
+  // make each child in puzzleContainer call swapTile() when clicked
+  Array.from(puzzleContainer.children).map((el) => {
+    el.onclick = () => swapTile(el);
+  });
+}
+
 // function that shuffles images array then appends each image to puzzleContainer
 function displayShuffledImages() {
   let imagesCopy = [].concat(images);
@@ -53,4 +78,4 @@ function displayShuffledImages() {
   });
 }
 
-export { displayShuffledImages };
+export { displayShuffledImages, displayImgs };
