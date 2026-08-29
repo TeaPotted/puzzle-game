@@ -1,3 +1,4 @@
+import { winGame } from "./game-endings.js";
 const puzzleContainer = document.querySelector(".puzzle-container");
 // function for getting the row and col of the given tile in puzzleContainer
 function getTileIndex(tile) {
@@ -62,6 +63,7 @@ function swapTile(tile) {
     puzzleContainer.insertBefore(tile, emptyTile);
     puzzleContainer.insertBefore(emptyTile, temp);
     puzzleContainer.removeChild(temp);
+    isPuzzleSolved();
   } else return; // else, do nothing
 }
 
@@ -76,6 +78,18 @@ function getTilePosition(tile) {
       return ++i;
     } else i++;
   }
+}
+
+// function for checking if the puzzle is solved
+function isPuzzleSolved() {
+  // if all the tiles positions match their data-position values, call winGame()
+  let currPositions = [...puzzleContainer.children].filter(
+    (el) => el.nodeName === "IMG",
+  );
+  for (let el of currPositions) {
+    if (el.dataset.position != `${getTilePosition(el)}`) return;
+  }
+  winGame();
 }
 
 export { swapTile };
