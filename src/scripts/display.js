@@ -7,7 +7,8 @@ import img1_2 from "../images/uhm-1-2.jpg";
 import img2_0 from "../images/uhm-2-0.jpg";
 import img2_1 from "../images/uhm-2-1.jpg";
 import img2_2 from "../images/uhm-2-2.jpg";
-import { createImg, shuffle } from "./functions.js";
+import replayImg from "../images/replay.svg";
+import { createImg, shuffle, createDiv, createH3 } from "./functions.js";
 import { swapTile } from "./tiles.js";
 
 const puzzleContainer = document.querySelector(".puzzle-container");
@@ -78,4 +79,14 @@ function displayShuffledImages() {
   });
 }
 
-export { displayShuffledImages, displayImgs };
+// for displaying the winning screen
+function displayWinScreen() {
+  // create a div to keep all the content in
+  const winDiv = createDiv("win-div");
+  const h3 = createH3("win", "YOU WIN!");
+  const replayBtn = createImg(replayImg);
+  winDiv.append(h3, replayBtn);
+  document.body.append(winDiv);
+}
+
+export { displayShuffledImages, displayImgs, displayWinScreen };
