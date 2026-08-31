@@ -28,4 +28,18 @@ function shuffle(array) {
   }
 }
 
-export { createImg, shuffle, createDiv, createH3 };
+// function that displays a countdown
+function timer() {
+  let sec = 44;
+  const timer = setInterval(() => {
+    document.querySelector(".timer").textContent =
+      `00:${sec < 10 ? "0" + sec : sec}`;
+    sec--;
+    // if sec reached 0, stop the timer
+    if (sec < 0) {
+      clearInterval(timer);
+    }
+  }, 1000);
+}
+
+export { createImg, shuffle, createDiv, createH3, timer };
