@@ -9,7 +9,7 @@ import img2_1 from "../images/uhm-2-1.jpg";
 import img2_2 from "../images/uhm-2-2.jpg";
 import unsolvedImg from "../images/unsolved.png";
 import replayImg from "../images/replay.svg";
-import { createImg, shuffle, createDiv, createH3 } from "./functions.js";
+import { createImg, shuffle, createDiv, createH3, timer } from "./functions.js";
 import { swapTile } from "./tiles.js";
 
 const puzzleContainer = document.querySelector(".puzzle-container");
@@ -89,6 +89,7 @@ function displayStartScreen() {
   const unsolvedImage = createImg(unsolvedImg);
   const startBtn = document.createElement("button");
   startBtn.textContent = "PLAY";
+  startBtn.onclick = () => displayCountdown();
   startDiv.append(titleP, unsolvedImage, startBtn);
   document.body.append(startDiv);
 }
@@ -101,6 +102,36 @@ function displayWinScreen() {
   const replayBtn = createImg(replayImg);
   winDiv.append(h3, replayBtn);
   document.body.append(winDiv);
+}
+
+// for displaying a countdown before starting the game
+function displayCountdown() {
+  // remove the start screen and display shuffled images
+  document.body.removeChild(document.body.querySelector(".start-div"));
+  displayImgs();
+
+  let sec = 3; // for keeping track of the seconds during the countdown
+  // create a div for displaying the countdown
+  const countdownDiv = createDiv("countdown-div");
+  const p = document.createElement("p");
+  p.textContent = 3;
+  countdownDiv.append(p);
+  document.body.append(countdownDiv);
+
+  // start a count down that changes the text content of p
+  const countdown = setInterval(() => {
+    sec--;
+    p.textContent = sec;
+    // when sec reaches 0, set p.textContent to "GO!" then remove countdownDiv from body after 0.8 secs
+    if (sec == 0) {
+      p.textContent = "GO!";
+      clearInterval(countdown);
+      setTimeout(() => {
+        document.body.removeChild(countdownDiv);
+        timer(); // start timer
+      }, 800);
+    }
+  }, 1000);
 }
 
 export {
