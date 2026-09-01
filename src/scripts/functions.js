@@ -1,4 +1,7 @@
 // function for creating DOM img elements
+import { isPuzzleSolved } from "./tiles.js";
+import { loseGame } from "./game-endings.js";
+
 function createImg(src) {
   const img = document.createElement("img");
   img.src = src;
@@ -35,9 +38,10 @@ function timer() {
     document.querySelector(".timer").textContent =
       `00:${sec < 10 ? "0" + sec : sec}`;
     sec--;
-    // if sec reached 0, stop the timer
+    // if sec reached 0, stop the timer and call loseGame()
     if (sec < 0) {
       clearInterval(timer);
+      if (!isPuzzleSolved()) loseGame();
     }
   }, 1000);
 }
