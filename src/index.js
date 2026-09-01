@@ -1,4 +1,8 @@
 import "./styles.css";
-import { displayShuffledImages, displayImgs } from "./scripts/display.js";
+import {
+  displayShuffledImages,
+  displayImgs,
+  displayStartScreen,
+} from "./scripts/display.js";
 
-displayImgs();
+displayStartScreen();
