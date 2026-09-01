@@ -9,7 +9,13 @@ import img2_1 from "../images/uhm-2-1.jpg";
 import img2_2 from "../images/uhm-2-2.jpg";
 import unsolvedImg from "../images/unsolved.png";
 import replayImg from "../images/replay.svg";
-import { createImg, shuffle, createDiv, createH3, timer } from "./functions.js";
+import {
+  createImg,
+  shuffle,
+  createDiv,
+  createH3,
+  startTimer,
+} from "./functions.js";
 import { swapTile } from "./tiles.js";
 
 const puzzleContainer = document.querySelector(".puzzle-container");
@@ -122,13 +128,13 @@ function displayCountdown() {
   const countdown = setInterval(() => {
     sec--;
     p.textContent = sec;
-    // when sec reaches 0, set p.textContent to "GO!" then remove countdownDiv from body after 0.8 secs
+    // when sec reaches 0, set p.textContent to "GO!" then remove countdownDiv from body
     if (sec == 0) {
       p.textContent = "GO!";
       clearInterval(countdown);
       setTimeout(() => {
         document.body.removeChild(countdownDiv);
-        timer(); // start timer
+        startTimer();
       }, 800);
     }
   }, 500); // 1000
