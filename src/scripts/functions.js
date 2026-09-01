@@ -31,19 +31,27 @@ function shuffle(array) {
   }
 }
 
-// function that displays a countdown
-function timer() {
+let timer;
+// function that starts the timer
+function startTimer() {
   let sec = 44;
-  const timer = setInterval(() => {
+
+  timer = setInterval(() => {
     document.querySelector(".timer").textContent =
       `00:${sec < 10 ? "0" + sec : sec}`;
     sec--;
     // if sec reached 0, stop the timer and call loseGame()
-    if (sec < 0) {
+    if (sec === -1) {
       clearInterval(timer);
       if (!isPuzzleSolved()) loseGame();
     }
-  }, 1000);
+  }, 100);
 }
 
-export { createImg, shuffle, createDiv, createH3, timer };
+// function to stop timer
+function stopTimer() {
+  clearInterval(timer);
+  timer = undefined;
+}
+
+export { createImg, shuffle, createDiv, createH3, startTimer, stopTimer };
