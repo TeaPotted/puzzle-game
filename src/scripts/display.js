@@ -131,7 +131,16 @@ function displayCountdown() {
         timer(); // start timer
       }, 800);
     }
-  }, 1000);
+  }, 500); // 1000
+}
+
+// function for displaying the losing screen
+function displayLoseScreen() {
+  const loseDiv = createDiv("lose-div");
+  const h3 = createH3("lose", "YOU LOSE!");
+  const restartBtn = createImg(replayImg);
+  loseDiv.append(h3, restartBtn);
+  document.body.append(loseDiv);
 }
 
 export {
@@ -139,4 +148,5 @@ export {
   displayImgs,
   displayWinScreen,
   displayStartScreen,
+  displayLoseScreen,
 };
