@@ -7,6 +7,7 @@ import img1_2 from "../images/uhm-1-2.jpg";
 import img2_0 from "../images/uhm-2-0.jpg";
 import img2_1 from "../images/uhm-2-1.jpg";
 import img2_2 from "../images/uhm-2-2.jpg";
+import unsolvedImg from "../images/unsolved.png";
 import replayImg from "../images/replay.svg";
 import { createImg, shuffle, createDiv, createH3 } from "./functions.js";
 import { swapTile } from "./tiles.js";
@@ -79,6 +80,19 @@ function displayShuffledImages() {
   });
 }
 
+// function for displaying the starting screen
+function displayStartScreen() {
+  const startDiv = createDiv("start-div");
+  const titleP = document.createElement("p");
+  titleP.classList.add("start-title");
+  titleP.textContent = "SOLVE THE\nPUZZLE";
+  const unsolvedImage = createImg(unsolvedImg);
+  const startBtn = document.createElement("button");
+  startBtn.textContent = "PLAY";
+  startDiv.append(titleP, unsolvedImage, startBtn);
+  document.body.append(startDiv);
+}
+
 // for displaying the winning screen
 function displayWinScreen() {
   // create a div to keep all the content in
@@ -89,4 +103,9 @@ function displayWinScreen() {
   document.body.append(winDiv);
 }
 
-export { displayShuffledImages, displayImgs, displayWinScreen };
+export {
+  displayShuffledImages,
+  displayImgs,
+  displayWinScreen,
+  displayStartScreen,
+};
