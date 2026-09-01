@@ -87,9 +87,9 @@ function isPuzzleSolved() {
     (el) => el.nodeName === "IMG",
   );
   for (let el of currPositions) {
-    if (el.dataset.position != `${getTilePosition(el)}`) return;
+    if (el.dataset.position != `${getTilePosition(el)}`) return false;
   }
   winGame();
 }
 
-export { swapTile };
+export { swapTile, isPuzzleSolved };
