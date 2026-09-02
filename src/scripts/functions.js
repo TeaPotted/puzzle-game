@@ -1,6 +1,7 @@
 // function for creating DOM img elements
 import { isPuzzleSolved } from "./tiles.js";
 import { loseGame } from "./game-endings.js";
+import { displayStartScreen } from "./display.js";
 
 function createImg(src) {
   const img = document.createElement("img");
@@ -54,4 +55,23 @@ function stopTimer() {
   timer = undefined;
 }
 
-export { createImg, shuffle, createDiv, createH3, startTimer, stopTimer };
+// function that resets the game
+function reset() {
+  // remove win-div / lose-div from body
+  document.body.removeChild(document.body.children[1]);
+  // reset p.timer textContent
+  document.querySelector(".timer-container > p.timer").textContent = "00:45";
+  // remove puzzleContainer's children
+  document.querySelector(".puzzle-container").textContent = "";
+  displayStartScreen();
+}
+
+export {
+  createImg,
+  shuffle,
+  createDiv,
+  createH3,
+  startTimer,
+  stopTimer,
+  reset,
+};
