@@ -96,7 +96,10 @@ function displayStartScreen() {
   const unsolvedImage = createImg(unsolvedImg);
   const startBtn = document.createElement("button");
   startBtn.textContent = "PLAY";
-  startBtn.onclick = () => displayCountdown();
+  startBtn.onclick = () => {
+    startDiv.classList.toggle("slide");
+    setTimeout(displayCountdown, 500);
+  };
   startDiv.append(titleP, unsolvedImage, startBtn);
   document.body.append(startDiv);
 }
@@ -147,7 +150,7 @@ function displayLoseScreen() {
   const loseDiv = createDiv("lose-div");
   const h3 = createH3("lose", "YOU LOSE!");
   const restartBtn = createImg(replayImg);
-  restartBtn.onclick = () => reset()
+  restartBtn.onclick = () => reset();
   loseDiv.append(h3, restartBtn);
   document.body.append(loseDiv);
 }
