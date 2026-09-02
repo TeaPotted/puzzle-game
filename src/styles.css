@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'Ranchers';
+  src: url('./fonts/Ranchers-Regular.woff2') format('woff2'),
+      url('./fonts/Ranchers-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+/* STARTING SCREEN start */
+
+.start-div {
+  background-image: linear-gradient(to right bottom, lightgreen, teal);
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  transition: all 0.35s;
+}
+
+.start-div.slide {
+  transform: translateX(-100%)
+}
+
+.start-div p.start-title {
+  font-size: 2em;
+  font-family: "Ranchers",sans-serif;
+  color: white;
+  word-spacing: 0.15em;
+  text-shadow: 2px 2px 2px teal;
+}
+
+.start-div img {
+  width: 60%;
+  border-radius: 10px;
+}
+
+.start-div button {
+  margin-top: 0.5em;
+  font-size: 2em;
+  font-family: "Ranchers", sans-serif;
+  background-color: lime;
+  color: #eee;
+  padding: 5px 30px;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 2px 5px 16px 0px teal, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 2px 5px 16px 0px teal, 5px 5px 15px 5px rgba(0,0,0,0);
+  transition-duration: 0.2s
+}
+
+.start-div button:active {
+  background-color: limegreen;
+}
+
+/* STARTING SCREEN end */
+
+.container {
+  display:none;
+}
