@@ -46,7 +46,7 @@ function startTimer() {
       clearInterval(timer);
       if (!isPuzzleSolved()) loseGame();
     }
-  }, 100);
+  }, 1000);
 }
 
 // function to stop timer

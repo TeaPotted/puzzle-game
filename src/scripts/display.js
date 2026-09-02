@@ -116,7 +116,7 @@ function displayWinScreen() {
 function displayCountdown() {
   // remove the start screen and display shuffled images
   document.body.removeChild(document.body.querySelector(".start-div"));
-  displayImgs();
+  displayShuffledImages();
 
   let sec = 3; // for keeping track of the seconds during the countdown
   // create a div for displaying the countdown
@@ -139,7 +139,7 @@ function displayCountdown() {
         startTimer();
       }, 800);
     }
-  }, 500); // 1000
+  }, 1000); // 1000
 }
 
 // function for displaying the losing screen
