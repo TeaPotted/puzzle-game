@@ -13,6 +13,12 @@
   box-sizing: border-box;
 }
 
+html {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgb(189, 255, 189), rgb(189, 255, 189), lime);
+}
+
 
 .start-div, .countdown-div {
   position: fixed;
@@ -88,6 +94,68 @@ box-shadow: 2px 5px 16px 0px teal, 5px 5px 15px 5px rgba(0,0,0,0);
 
 /* COUNTDOWN end */
 
-.container {
-  display: none;
+
+
+
+ /* TOP-CONTAINER start */
+
+.top-container {
+  display: flex;
+  width: 85vw;
+  justify-self: center;
+  margin-top: 10vh;
+  margin-bottom: 1em;
+  position: relative;
 }
+
+.top-container > img {
+  width: 20%;
+  border-radius: 5px;
+}
+
+.timer-container {
+  position:absolute;
+  right: 0%;
+  top: 5%;
+  padding: 0px;
+}
+
+.timer-container h3 {
+  font-family: "Arial", sans-serif;
+  word-spacing: -1px;
+  font-size: 1.1em;
+}
+
+.timer-container p.timer {
+  font-size: 1.9em;
+  text-align:end;
+  font-family: "sans-serif";
+  font-weight: bold
+}
+
+
+/* TOP-CONTAINER end */
+
+
+
+/* PUZZLE-CONTAINER start */
+.puzzle-container {
+  width: 90vw;
+  height: 90vw;
+  border: 10px solid #171717;
+  border-radius: 10px;
+  background: #eee;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 1px;
+  justify-self: center;
+  align-self: center;
+}
+
+.puzzle-container >img {
+  width: 100%;
+  height: 1fr;
+}
+
+/* PUZZLE-CONTAINER end */

@@ -1,6 +1,10 @@
 import { winGame } from "./game-endings.js";
+import { wrapGrid } from "animate-css-grid";
 const puzzleContainer = document.querySelector(".puzzle-container");
+// add animation to puzzleContainer
+wrapGrid(puzzleContainer);
 // function for getting the row and col of the given tile in puzzleContainer
+
 function getTileIndex(tile) {
   // create two vars: row and col for keeping track of the row and column
   let row = 1;
