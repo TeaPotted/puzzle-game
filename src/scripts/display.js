@@ -111,7 +111,9 @@ function displayWinScreen() {
   const winDiv = createDiv("win-div");
   const h3 = createH3("win", "YOU WIN!");
   const replayBtn = createImg(replayImg);
-  replayBtn.onclick = () => reset();
+  setTimeout(() => {
+    replayBtn.onclick = () => reset();
+  }, 500)
   winDiv.append(h3, replayBtn);
   document.body.append(winDiv);
 }
@@ -149,9 +151,11 @@ function displayCountdown() {
 function displayLoseScreen() {
   const loseDiv = createDiv("lose-div");
   const h3 = createH3("lose", "YOU LOSE!");
-  const restartBtn = createImg(replayImg);
-  restartBtn.onclick = () => reset();
-  loseDiv.append(h3, restartBtn);
+  const replayBtn = createImg(replayImg);
+  setTimeout(() => {
+    replayBtn.onclick = () => reset();
+  }, 500)
+  loseDiv.append(h3, replayBtn);
   document.body.append(loseDiv);
 }
 
