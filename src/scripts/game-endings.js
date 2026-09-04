@@ -9,7 +9,7 @@ function loseGame() {
   [...puzzleContainer.children].map((el) => (el.onclick = ""));
   setTimeout(() => {
     displayLoseScreen();
-  }, 800);
+  }, 1500);
 }
 
 // function for when player solves the game
