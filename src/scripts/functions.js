@@ -57,13 +57,18 @@ function stopTimer() {
 
 // function that resets the game
 function reset() {
-  // remove win-div / lose-div from body
-  document.body.removeChild(document.body.children[1]);
-  // reset p.timer textContent
-  document.querySelector(".timer-container > p.timer").textContent = "00:45";
-  // remove puzzleContainer's children
-  document.querySelector(".puzzle-container").textContent = "";
   displayStartScreen();
+  const startDiv = document.querySelector(".start-div");
+  startDiv.classList.add("slideBack");
+  // reset game after slideback animation is done
+  setTimeout(() => {
+    // remove win-div / lose-div from body
+    document.body.removeChild(document.body.children[1]);
+    // reset p.timer textContent
+    document.querySelector(".timer-container > p.timer").textContent = "00:45";
+    // remove puzzleContainer's children
+    document.querySelector(".puzzle-container").textContent = "";
+  }, 300);
 }
 
 export {

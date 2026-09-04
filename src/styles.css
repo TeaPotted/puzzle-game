@@ -16,6 +16,16 @@
 	}
 }
 
+@keyframes slideBack {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -48,6 +58,12 @@ html {
   justify-content: center;
   
   transition: all 0.30s;
+}
+
+.start-div.slideBack {
+   animation: linear;
+  animation-name: slideBack;
+  animation-duration: 0.3s;
 }
 
 .start-div.slide {
