@@ -7,6 +7,15 @@
   font-display: swap;
 }
 
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -38,7 +47,7 @@ html {
   align-items: center;
   justify-content: center;
   
-  transition: all 0.35s;
+  transition: all 0.30s;
 }
 
 .start-div.slide {
@@ -90,6 +99,14 @@ box-shadow: 2px 5px 16px 0px teal, 5px 5px 15px 5px rgba(0,0,0,0);
   color: white;
   font-size: 3em;
   font-family: "Ranchers", sans-serif;
+
+
+  opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.2s;
+
 }
 
 /* COUNTDOWN end */
