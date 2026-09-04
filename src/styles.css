@@ -20,7 +20,7 @@ html {
 }
 
 
-.start-div, .countdown-div {
+.start-div, .countdown-div, .lose-div, .win-div {
   position: fixed;
   top: 0%;
   left: 0%;
@@ -159,3 +159,38 @@ box-shadow: 2px 5px 16px 0px teal, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 /* PUZZLE-CONTAINER end */
+
+
+
+
+/* WIN-DIV AND LOSE-DIV start */
+.lose-div, .win-div {
+  background-color: rgba(0, 0, 0, 0.9);
+  display: grid;
+  align-content: center;
+  justify-items: center;
+
+  font-family: "Ranchers", sans-serif;
+  font-size: 3em;
+  word-spacing: 0.3em;
+  text-decoration: underline;
+}
+
+.lose-div img, .win-div img {
+  margin-top: 10px;
+  width: 35%;
+  align-self: center;
+  background-color: rgb(255, 140, 9);
+  border-radius: 80px;
+  align-items: center;
+  justify-items: center;
+}
+
+.lose-div {
+  color: red;
+}
+
+.win-div {
+  color: lime;
+}
+/* WIN-DIV AND LOSE-DIV end */
