@@ -97,8 +97,9 @@ function displayStartScreen() {
   const startBtn = document.createElement("button");
   startBtn.textContent = "PLAY";
   startBtn.onclick = () => {
+    displayShuffledImages();
+    setTimeout(displayCountdown, 350);
     startDiv.classList.toggle("slide");
-    setTimeout(displayCountdown, 500);
   };
   startDiv.append(titleP, unsolvedImage, startBtn);
   document.body.append(startDiv);
@@ -119,7 +120,6 @@ function displayWinScreen() {
 function displayCountdown() {
   // remove the start screen and display shuffled images
   document.body.removeChild(document.body.querySelector(".start-div"));
-  displayShuffledImages();
 
   let sec = 3; // for keeping track of the seconds during the countdown
   // create a div for displaying the countdown
