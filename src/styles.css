@@ -100,8 +100,6 @@ box-shadow: 2px 5px 16px 0px teal, 5px 5px 15px 5px rgba(0,0,0,0);
   font-size: 3em;
   font-family: "Ranchers", sans-serif;
 
-
-  opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
@@ -191,9 +189,15 @@ box-shadow: 2px 5px 16px 0px teal, 5px 5px 15px 5px rgba(0,0,0,0);
   font-size: 3em;
   word-spacing: 0.3em;
   text-decoration: underline;
+
+  animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.2s;
 }
 
 .lose-div img, .win-div img {
+  background-color: rgba(0, 0, 0, 1);
   margin-top: 10px;
   width: 35%;
   align-self: center;
