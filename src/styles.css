@@ -189,6 +189,13 @@ box-shadow: 2px 5px 16px 0px teal, 5px 5px 15px 5px rgba(0,0,0,0);
   height: 1fr;
 }
 
+.puzzle-container #last-piece {
+  animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
 /* PUZZLE-CONTAINER end */
 
 

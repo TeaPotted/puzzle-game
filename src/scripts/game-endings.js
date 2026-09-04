@@ -27,7 +27,7 @@ function winGame() {
 
   setTimeout(() => {
     displayWinScreen();
-  }, 800);
+  }, 1500);
 }
 
 export { winGame, loseGame };
